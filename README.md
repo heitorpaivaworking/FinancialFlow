@@ -1,29 +1,29 @@
 # FinanceFlow
 
-Sistema completo de controle financeiro pessoal com dashboard interativo, controle de receitas, despesas, investimentos, reserva de emergência e gestão MEI.
+A complete personal finance management system with an interactive dashboard, income and expense tracking, investments, emergency fund, and MEI (micro-entrepreneur) management.
 
 ## Stack
 
 - **Backend:** Python 3.11 + FastAPI + SQLAlchemy 2.0 + Alembic
-- **Banco:** PostgreSQL 16 (via Docker)
+- **Database:** PostgreSQL 16 (via Docker)
 - **Frontend:** React 18 + Vite + TailwindCSS v3 + Recharts
 - **Infra:** Docker + Docker Compose + Nginx
 
-## Início Rápido
+## Quick Start
 
-### Com Docker (recomendado)
+### With Docker (recommended)
 
 ```bash
-# Produção
+# Production
 make prod
-# Acesse: http://localhost (frontend) | http://localhost/api/docs (Swagger)
+# Access: http://localhost (frontend) | http://localhost/api/docs (Swagger)
 
-# Desenvolvimento (hot reload)
+# Development (hot reload)
 make dev
-# Acesse: http://localhost:5173 (frontend) | http://localhost:9000/api/docs (Swagger)
+# Access: http://localhost:5173 (frontend) | http://localhost:9000/api/docs (Swagger)
 ```
 
-### Sem Docker
+### Without Docker
 
 ```bash
 # Linux/Mac
@@ -33,63 +33,63 @@ make dev
 start.bat
 ```
 
-### Pré-requisitos
+### Prerequisites
 
-- Docker Desktop (modo Docker) ou:
+- Docker Desktop (Docker mode) or:
   - Python 3.11+
   - Node.js 20+
   - PostgreSQL 16
 
-## Comandos Úteis
+## Useful Commands
 
 ```bash
-make help          # Lista todos os comandos
-make dev           # Desenvolvimento com hot reload
-make prod          # Produção
-make down          # Para containers
-make logs          # Logs em tempo real
-make seed          # Recarrega dados de exemplo
-make test          # Roda testes do backend
-make db-shell      # Shell do PostgreSQL
-make backup        # Backup do banco
-make reset         # Reinicia tudo com dados frescos
+make help          # List all commands
+make dev           # Development with hot reload
+make prod          # Production
+make down          # Stop containers
+make logs          # Real-time logs
+make seed          # Reload sample data
+make test          # Run backend tests
+make db-shell      # PostgreSQL shell
+make backup        # Database backup
+make reset         # Reset everything with fresh data
 ```
 
-## Módulos
+## Modules
 
-| Módulo | Descrição |
-|--------|-----------|
-| Dashboard | KPIs, gráficos de evolução, distribuição de gastos, patrimônio |
-| Receitas | Controle de entradas com fontes e tipos |
-| Despesas | Controle de saídas por categoria e subcategoria |
-| Contas Fixas | Gestão de contas recorrentes com status de pagamento |
-| Investimentos | Carteira com cálculo de lucro e rentabilidade |
-| Reserva | Fundo de emergência com progresso visual |
-| MEI | Controle de faturamento com cálculo de impostos e limite anual |
+| Module | Description |
+|--------|-------------|
+| Dashboard | KPIs, trend charts, spending distribution, net worth |
+| Income | Income tracking with sources and types |
+| Expenses | Expense tracking by category and subcategory |
+| Fixed Bills | Recurring bill management with payment status |
+| Investments | Portfolio with profit and return calculations |
+| Emergency Fund | Emergency fund with visual progress tracking |
+| MEI | Revenue tracking with tax calculations and annual limit |
 
 ## API
 
-Documentação interativa: `http://localhost:9000/api/docs`
+Interactive docs: `http://localhost:9000/api/docs`
 
 Base URL: `/api/v1`
 
-Endpoints principais:
-- `/receitas` — CRUD + resumos
-- `/despesas` — CRUD + resumos por categoria
-- `/contas-fixas` — CRUD + toggle pagamento + replicar mês
-- `/investimentos` — CRUD + resumo por tipo
-- `/reserva` — aportes + meta + status
-- `/mei` — CRUD + resumo mensal/anual
-- `/dashboard` — KPIs, evolução, patrimônio, saúde financeira
+Main endpoints:
+- `/receitas` — Income CRUD + summaries
+- `/despesas` — Expenses CRUD + category summaries
+- `/contas-fixas` — Fixed bills CRUD + payment toggle + month replication
+- `/investimentos` — Investments CRUD + type summary
+- `/reserva` — Deposits + goal + status
+- `/mei` — MEI CRUD + monthly/annual summary
+- `/dashboard` — KPIs, trends, net worth, financial health
 
-## Estrutura de Commits
+## Commit Convention
 
 ```
-feat(receitas): adiciona endpoint de resumo por fonte
-fix(mei): corrige cálculo de imposto
-chore(docker): atualiza configuração do compose
+feat(income): add summary by source endpoint
+fix(mei): fix tax calculation
+chore(docker): update compose configuration
 ```
 
-## Licença
+## License
 
-Projeto pessoal. Uso livre.
+Personal project. Free to use.

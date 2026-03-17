@@ -54,6 +54,9 @@ logs/
 npm-debug.log*
 yarn-error.log
 
+# ─── Claude Code ─────────────────────────────────────────
+.claude/
+
 # ─── Outros ───────────────────────────────────────────────
 *.bak
 *.tmp
