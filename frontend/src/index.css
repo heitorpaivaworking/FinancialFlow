@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── DESIGN TOKENS ───────────────────────────────────── */
+:root {
+  --bg-base:        #080C14;
+  --bg-surface:     #0E1420;
+  --bg-elevated:    #141B2D;
+  --bg-overlay:     #1A2238;
+  --bg-hover:       #1F2940;
+  --bg-active:      #243050;
+  --border-subtle:  rgba(255,255,255,0.06);
+  --border-default: rgba(255,255,255,0.10);
+  --border-strong:  rgba(255,255,255,0.18);
+  --text-primary:   #EEF2FF;
+  --text-secondary: #8892B0;
+  --text-muted:     #4A5568;
+  --accent-blue:    #4F8EF7;
+  --accent-green:   #10D98A;
+  --accent-red:     #FF5757;
+  --accent-gold:    #FFB547;
+  --accent-purple:  #A78BFA;
+  --accent-cyan:    #22D3EE;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.6);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+.tabular-nums, [data-mono], .currency, .percentage {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── SCROLLBAR ───────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb {
+  background: var(--bg-active);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--border-strong); }
+
+::selection {
+  background: rgba(79,142,247,0.15);
+  color: var(--accent-blue);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ── UTILITIES ───────────────────────────────────────── */
+@layer utilities {
+  .glass {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-subtle);
+  }
+  .text-positive { color: var(--accent-green); }
+  .text-negative { color: var(--accent-red); }
+  .text-neutral  { color: var(--text-secondary); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── GRADIENT MESH BACKGROUND ────────────────────────── */
+.bg-gradient-mesh {
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 0%, rgba(79,142,247,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 100%, rgba(167,139,250,0.06) 0%, transparent 60%),
+    var(--bg-base);
+}

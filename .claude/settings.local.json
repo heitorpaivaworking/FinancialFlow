@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -X PUT http://localhost:9000/api/v1/reserva/meta -H \"Content-Type: application/json\" -d '{\"\"meta\"\": 15000, \"\"meses_meta\"\": 12}')"
+    ]
+  }
+}

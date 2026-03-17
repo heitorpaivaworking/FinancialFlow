@@ -1,0 +1,15 @@
+{
+  "short_name": "FinanceFlow",
+  "name": "FinanceFlow — Controle Financeiro Pessoal",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#080C14",
+  "background_color": "#080C14"
+}
